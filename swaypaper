@@ -189,3 +189,5 @@ while true; do
         exit 0
     fi
 done
+pkill swaybg
+swaybg -i "$HOME/.config/sway/current_wallpaper" -m fill &
