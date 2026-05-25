@@ -1,6 +1,6 @@
 pkgname=swaypaper
 pkgver=1.3.3
-pkgrel=2
+pkgrel=1
 pkgdesc="Simple TUI wallpaper selector for swaybg"
 arch=('any')
 url="https://github.com/Kibblix/swaypaper"
