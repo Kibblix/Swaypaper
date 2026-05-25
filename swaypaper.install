@@ -1,5 +1,0 @@
-post_install() {
-    echo
-    echo "Run 'swaypaper' to start the setup"
-    echo
-}
