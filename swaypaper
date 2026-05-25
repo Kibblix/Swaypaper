@@ -93,24 +93,36 @@ if $FIRST_RUN; then
             mkdir -p "$(dirname "$AUTOSTART_CONFIG")"
             touch "$AUTOSTART_CONFIG"
 
-            if ! grep -Fxq "$AUTOSTART_LINE" "$AUTOSTART_CONFIG"; then
+            BLOCK_START="# >>> swaypaper start"
+            BLOCK_END="# <<< swaypaper end"
 
+            NEW_BLOCK="$BLOCK_START
+$AUTOSTART_LINE
+$BLOCK_END"
+
+            if grep -q "$BLOCK_START" "$AUTOSTART_CONFIG"; then
+                awk -v start="$BLOCK_START" -v end="$BLOCK_END" -v new="$NEW_BLOCK" '
+                $0 == start {print new; in_block=1; next}
+                $0 == end {in_block=0; next}
+                !in_block
+                ' "$AUTOSTART_CONFIG" > "${AUTOSTART_CONFIG}.tmp" \
+                && mv "${AUTOSTART_CONFIG}.tmp" "$AUTOSTART_CONFIG"
+
+                echo
+                echo "Autostart block updated."
+                echo
+            else
                 {
                     echo
-                    echo "# added by swaypaper"
-                    echo "$AUTOSTART_LINE"
+                    echo "$NEW_BLOCK"
                 } >> "$AUTOSTART_CONFIG"
 
                 echo
-                echo "Autostart added."
-                echo
-            else
-                echo
-                echo "Autostart already exists."
+                echo "Autostart block added."
                 echo
             fi
+
         fi
-    fi
 
     cat > "$CONFIG_FILE" <<EOF
 WALLPAPER_DIR="$WALLPAPER_DIR"
