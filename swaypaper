@@ -63,7 +63,7 @@ if $FIRST_RUN; then
 
         3)
             AUTOSTART_CONFIG="$HOME/.config/niri/config.kdl"
-            AUTOSTART_LINE="spawn-sh-at-startup 'swaybg -i /home/jacob/.config/sway/current_wallpaper -m fill'"
+            AUTOSTART_LINE="spawn-sh-at-startup "swaybg -i /home/jacob/.config/sway/current_wallpaper -m fill""
             ;;
 
         4)
