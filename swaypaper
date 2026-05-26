@@ -1,5 +1,7 @@
 #!/bin/bash
-
+# Swaypaper
+# original author
+# -kibblix
 DEFAULT_DIR="$HOME/Pictures/Wallpapers"
 
 CONFIG_DIR="$HOME/.config/swaypaper"
