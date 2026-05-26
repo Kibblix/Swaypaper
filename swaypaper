@@ -97,7 +97,7 @@ if $FIRST_RUN; then
 
                 {
                     echo
-                    echo "# added by swaypaper"
+                    echo 
                     echo "$AUTOSTART_LINE"
                 } >> "$AUTOSTART_CONFIG"
 
