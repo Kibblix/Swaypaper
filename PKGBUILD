@@ -1,5 +1,5 @@
 pkgname=swaypaper
-pkgver=1.3.5
+pkgver=1.3.6
 pkgrel=1
 pkgdesc="Simple TUI wallpaper selector for swaybg"
 arch=('any')
