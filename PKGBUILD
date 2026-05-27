@@ -1,5 +1,9 @@
 pkgname=swaypaper
+<<<<<<< HEAD
 pkgver=1.3.8
+=======
+pkgver=1.4.3
+>>>>>>> a16d5ff (fixed bug where it closed wallpaper)
 pkgrel=1
 pkgdesc="Simple TUI wallpaper selector for swaybg"
 arch=('any')
