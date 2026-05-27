@@ -1,5 +1,7 @@
 #!/bin/bash
-
+# Swaypaper
+# original author
+# -Kibblix
 DEFAULT_DIR="$HOME/Pictures/Wallpapers"
 
 CONFIG_DIR="$HOME/.config/swaypaper"
@@ -61,7 +63,7 @@ if $FIRST_RUN; then
 
         3)
             AUTOSTART_CONFIG="$HOME/.config/niri/config.kdl"
-            spawn-at-startup "swaybg" "-i" "/home/jacob/.config/sway/current_wallpaper" "-m" "fill"
+            AUTOSTART_LINE='spawn-sh-at-startup "swaybg -i /home/jacob/.config/sway/current_wallpaper -m fill"'
             ;;
 
         4)
@@ -97,7 +99,7 @@ if $FIRST_RUN; then
 
                 {
                     echo
-                    echo "# added by swaypaper"
+                    echo 
                     echo "$AUTOSTART_LINE"
                 } >> "$AUTOSTART_CONFIG"
 
