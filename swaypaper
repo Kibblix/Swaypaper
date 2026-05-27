@@ -208,16 +208,13 @@ while true; do
 
         pkill swaybg >/dev/null 2>&1
 
-        swaybg -i "$chosen" -m fill >/dev/null 2>&1 &
+        swaybg -i "$chosen" -m fill >/dev/null 2>&1 & disown
 
         printf "\033[H"
 
         echo "Wallpaper applied:"
         echo
         echo "$(basename "$chosen")"
-
-        sleep 1
-        exit 0
 
     elif [[ $key == "q" || $key == "Q" ]]; then
         exit 0
